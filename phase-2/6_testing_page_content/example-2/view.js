@@ -7,7 +7,9 @@ class View {
 
   addParagraph() {
     const paragraphEl = document.createElement('p');
-    paragraphEl.textContent =
+    // paragraphEl.textContent =
+    // 'This paragraph has been dynamically added by JavaScript!';
+    paragraphEl.innerText =
       'This paragraph has been dynamically added by JavaScript!';
     this.mainContainerEl.append(paragraphEl);
   }

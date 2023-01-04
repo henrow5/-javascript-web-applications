@@ -17,16 +17,31 @@ describe('Page view', () => {
   });
 
   it('adds a paragraph and displays 3 paragraphs', () => {
+    // Arrange
     const view = new View();
+
+    // Act
     view.addParagraph();
 
-    expect(document.querySelectorAll('p').length).toBe(3);
+    // Assert
+    const paragraphElements = document.querySelectorAll('p');
+    expect(paragraphElements.length).toBe(3);
+    // expect(paragraphElements[2].textContent).toBe(
+    //   'This paragraph has been dynamically added by JavaScript!'
+    // );
+    expect(paragraphElements[2].innerText).toBe(
+      'This paragraph has been dynamically added by JavaScript!'
+    );
   });
 
   it('removes all paragraphs from the document', () => {
+    // Arrange
     const view = new View();
+
+    // Act
     view.clearParagraphs();
 
+    // Assert
     expect(document.querySelectorAll('p').length).toBe(0);
   });
 });
